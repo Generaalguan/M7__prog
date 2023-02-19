@@ -1,0 +1,46 @@
+@use "../../abstracts/colors";
+
+.save{
+    font-size: 100%;
+    height: min-content;
+    padding: 2rem;
+    background:  map-get($map: colors.$cookie, $key:"background" );
+    border-radius: 0.5rem;
+    color: map-get($map: colors.$cookie, $key: spots1);
+    border: none;
+    width: 20rem;
+    transform: translateY(2.5rem);
+    transition: 0.2s all;
+    border: 0.5rem solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    position: relative;
+
+
+
+    & > i{
+        transform: scaleX(0);
+        transition: 0.2s all;
+        display: block;
+        opacity: 0;
+        transform-origin: left;
+        position: absolute;
+        left: 20%;
+    }
+
+    &:hover{
+        background:map-get($map: colors.$cookie, $key: spots1) ;
+        color: map-get($map: colors.$cookie, $key:"background");
+        cursor: pointer;
+    
+        border: 0.5rem solid map-get($map: colors.$cookie, $key:"spots2");
+    }
+
+    &:hover > i{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+}

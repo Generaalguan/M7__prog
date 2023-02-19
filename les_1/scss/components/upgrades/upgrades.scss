@@ -1,0 +1,80 @@
+@use "../../abstracts/colors";
+.upgrades{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: map-get($map: colors.$upgrades, $key:"background" );
+    width: max-content;
+    border-radius: 1rem;
+
+    &__upgrade{
+
+        padding: 2rem;
+        display: grid;
+        grid-column-gap: 2rem;
+        grid-template-columns: 5% 95%;
+        transition: 0.2s all;
+        &:hover{
+            cursor: pointer;
+            background: map-get($map: colors.$cookie, $key:spots1 );
+            color: white;
+            
+        }
+
+        & > i{
+            transform: translateY(10%);
+            color: map-get($map: colors.$cookie, $key:"spots1" );;
+
+        }
+
+        &:nth-child(1){
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+        }
+        &:nth-child(3){
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+        
+
+
+        &:hover > i{
+            color: white;
+        }
+        
+    }
+
+}
+
+.upgradesMobile{
+    display: none;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    grid-template-rows: 5rem;
+    margin-top: 2rem;
+
+    &__upgrade{
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        gap: 0.5rem;
+        font-size: 80%;
+        transition: 0.2s;
+
+    &:active{
+        transform: scale(0.9);
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    }
+}
