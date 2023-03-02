@@ -10,11 +10,13 @@
     padding: 4rem;
     max-width: 170rem;
     align-items: center;
+    justify-content: center;
 
 
     &__color{
         flex-grow: 1;
         width: 17rem;
+        max-width: 17rem;
         aspect-ratio: 1/1;
         display: flex;
         align-items: center;
@@ -30,6 +32,16 @@
 
         }
 
+        animation-name:popupcard;
+        animation-duration: 0.6s;
+        animation-fill-mode: backwards;
+
+    }
+
+    @for $i from 1 through 100{
+        &color:nth-of-type(#{$i}){
+            animation-delay: $i/10 + s;
+        }
     }
 
 
