@@ -1,0 +1,103 @@
+@use "../../abstracts/colors.scss";
+.cookie{
+    width: 30rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: map-get($map: colors.$cookie, $key:"background" );
+    position: relative;
+    overflow: hidden;
+    border: 0.5rem solid #040303;
+    box-shadow: 
+    inset 0 0 9rem 0 black,
+    0 2rem 5rem 0rem black;
+    transition: 0.2s all;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &:active{
+        transform: scale(0.95);
+    }
+
+    &--chocolate{
+        background: #B99B6B;
+        box-shadow: 0 2rem 1.5rem 0rem rgba(0,0,0,0.2);
+        border: 1rem solid #362222;
+    }
+
+    &--chocolate &__spots{
+        background: #362222;
+        border-radius: 20%;
+    }
+
+    &--redvelvet{
+        background: #EB455F;
+        box-shadow: 0 2rem 1.5rem 0rem rgba(0,0,0,0.2);
+        border: 1rem solid #FCFFE7;
+    }
+
+    &--redvelvet &__spots{
+        background: transparent;
+        background: #FCFFE7;
+        &--first{
+            left: 50%;
+            top: 55%;
+        }
+        &--second{
+            left: 77%;
+            top: 13%;
+        }
+        &--third{
+            left: 3%;
+            top: 3%;
+        }
+        &--fourth{
+            left: 19%;
+            top: 33%;
+        }
+        &--vifth{
+            left: 10%;
+            top: 80%;
+        }
+    }
+
+    &__spots{
+        width: 7.5rem;
+        aspect-ratio: 1/1;
+        border-radius: 45%;
+        background: map-get($map: colors.$cookie, $key:"spots1" );
+        position: absolute;
+
+        &--first{
+            top:20%;
+            left: 10%;
+            background: map-get($map: colors.$cookie, $key:"spots1" );
+        }
+
+        &--second{
+            right: 15%;
+            bottom: 5%;
+            background: map-get($map: colors.$cookie, $key:"spots1" );
+
+        }
+
+        &--third{
+            right: 5%;
+            top: 10%;
+            background: map-get($map: colors.$cookie, $key:"spots2" );
+        }
+
+        &--fourth{
+            bottom: 15%;
+            background: map-get($map: colors.$cookie, $key:"spots2" );
+        }
+    
+
+        &--vifth{
+            bottom: 35%;
+            left: 35%;
+            background: map-get($map: colors.$cookie, $key:"spots2" );
+        }
+    }
+}
