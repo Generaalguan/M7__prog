@@ -1,0 +1,24 @@
+@use "./abstracts/colors";
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #0F4C75, #00FFF5 );
+    color: map-get($map: colors.$cookie, $key:"background" );
+    padding: 4rem;
+
+
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.buttonAndAvatarWrapper{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}

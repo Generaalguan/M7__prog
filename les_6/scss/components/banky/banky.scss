@@ -1,0 +1,15 @@
+@use "../../abstracts/vars.scss";
+
+.banky{
+    background: white;
+    height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody")*2);
+    display: flex;
+    gap: 2rem;
+
+    &__section{
+        width: 50%;
+        background: red;
+    }
+
+
+}

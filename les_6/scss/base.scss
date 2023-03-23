@@ -1,0 +1,10 @@
+@use "abstracts/colors";
+@use "abstracts/vars.scss";
+
+body{
+    font-family: sans-serif;
+    background:linear-gradient(to top left, map-get(colors.$baseColors, "background"),40%, map-get(colors.$baseColors, "backgroundDark"));
+    min-height: 100vh;
+    padding: map-get(vars.$vhCalc, "paddingOfBody");
+
+}

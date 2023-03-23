@@ -1,0 +1,75 @@
+@use "../../abstracts/colors";
+@use "../../abstracts/animation";
+
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    background: white;
+    padding: 4rem;
+    max-width: 170rem;
+    align-items: center;
+    justify-content: center;
+
+
+    &__color{
+        flex-grow: 1;
+        width: 17rem;
+        max-width: 17rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: 0.5s;
+        position: relative;
+
+        &:hover{
+            cursor: pointer;
+            transform: translateY(-0.5rem);
+
+        }
+
+        animation-name:popupcard;
+        animation-duration: 0.6s;
+        animation-fill-mode: backwards;
+
+    }
+
+    @for $i from 1 through 100{
+        &__color:nth-of-type(#{$i}){
+            animation-delay: $i/10 + s;
+        }
+    }
+
+
+    &__circle{
+        width: 50%;
+        aspect-ratio: 1/1;
+
+        border-radius: 50%;
+        transition: 0.2s transform;
+        transition-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+        &--selected{
+            transform: scale(3);
+
+        }
+    }
+
+    &__text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: popup;
+        animation-duration: 0.6s;
+        display: none;
+    }
+  
+    &__circle--selected + &__text{
+        display: block;
+    }
+}
+
