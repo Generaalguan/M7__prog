@@ -1,0 +1,56 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  font-family: "Ubuntu", sans-serif;
+  background: linear-gradient(to right, #FC5404, #F9B208);
+  font-size: 200%;
+  color: black;
+}
+
+.header {
+  background: white;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.header__logo {
+  font-size: 500%;
+}
+
+.main {
+  background: black;
+  width: 100%;
+  height: 70%;
+}
+
+.footer {
+  background: white;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.footer__text {
+  font-size: 75%;
+}
+
+/*# sourceMappingURL=style.css.map */
