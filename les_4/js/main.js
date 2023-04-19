@@ -25,7 +25,7 @@ class colorCard{ //je maakt hier een nieuwe blauwdruk aan
 
 
         this.htmlElement.onclick = this.onHtmlElementClicked;       //je zecht dat de htmlelement een onclick heeft
-
+        
         this.render(); // je voert de render functie uit
 
     }

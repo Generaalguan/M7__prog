@@ -1,0 +1,33 @@
+{
+    "Bankrekening": [
+        {
+            "from/to": "Bilal",
+            "amount": 10,
+            "logo": "fa-solid fa-piggy-bank" 
+        },
+        {
+            "from/to": "Dion",
+            "amount":  0.10
+        },
+        {
+            "from/to": "judensio",
+            "amount": -150
+        },
+        {
+            "from/to": "rijles",
+            "amount": -450
+        }
+    ],
+
+    "ZZP-REKENING": [
+        {
+            "from/to": "Bill Gates",
+            "amount": 10,
+            "logo": "fa-solid fa-credit-card"
+        },
+        {
+            "from/to": "Bruce Wayne",
+            "amount": 58008
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+@use "./colors.scss";
+
+@mixin afterStyle{
+            content: "";
+            width: 100%;
+            height: 5%;
+            background: blue;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to bottom right, map-get(colors.$baseColors, "background"),40%, map-get(colors.$baseColors, "backgroundDark"));
+            
+}

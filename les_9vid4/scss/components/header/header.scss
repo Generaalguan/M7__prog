@@ -1,0 +1,25 @@
+@use "../../abstracts/vars.scss";
+
+.header{
+    background: white;
+    height: map-get(vars.$vhCalc, "heightOfHeader");
+    font-family: 'Amatic SC', cursive;
+    padding: 2rem;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    width: 100%;
+    max-width: 150rem;
+    margin: 0 auto;
+
+    &__logo{
+        display: flex;
+        font-size: 300%;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 400;
+    }
+
+    
+
+}
