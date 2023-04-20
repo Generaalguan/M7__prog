@@ -67,6 +67,10 @@ class Main {
         this.leftsection.makeCardsFromData(data);
     }
 
+    callFromLeftSection(episode, data) {
+        this.rightsection.makeDescriptionFromData(episode, data)
+    }
+
     render() {
         this.placeToRenderMain.appendChild(this.mainElement)
         //leftsection
@@ -100,7 +104,7 @@ class Mainleftsection {
 
             console.log(entry[1]);
 
-           // let randomNumbers = [];
+            // let randomNumbers = [];
 
             for (let i = 0; i < 4; i++) {
                 let randomNumber = Math.floor(Math.random() * 7);
@@ -108,7 +112,8 @@ class Mainleftsection {
                 this.card = document.createElement("li");
                 this.card.classList = "main__card";
                 this.card.onclick = () => {
-                    this.bankymain.callFromLeftSection(entry[0], data);
+                    this.main.callFromLeftSection(entry[1][randomNumber], data);
+                    console.log(entry[1][randomNumber], data);
                 }
 
                 this.cardButton = document.createElement("button");
@@ -139,7 +144,7 @@ class Mainleftsection {
             }
 
         }
-    
+
         )
     }
 
@@ -158,7 +163,7 @@ class Mainrightsection {
 
         this.sectionRight = document.createElement("section");
         this.sectionRight.classList = "main__section main__section--right";
-        
+
         this.rightDescription = document.createElement("div");
         this.rightDescription.classList = "main__description";
 
@@ -166,53 +171,80 @@ class Mainrightsection {
         this.descriptionFigure.classList = "main__description--figure";
 
         this.descriptionIMG = document.createElement("img");
-        this.descriptionIMG.src = "img/why.webp";
         this.descriptionIMG.classList = "main__description--img";
 
         this.descriptionDate = document.createElement("h3");
         this.descriptionDate.classList = "main__description--date";
-        this.descriptionDate.innerText = "datum";
 
         this.descriptionTitle = document.createElement("h3");
         this.descriptionTitle.classList = "main__description--title"
-        this.descriptionTitle.innerText = "titel";
 
         this.descriptionSummary = document.createElement("p");
         this.descriptionSummary.classList = "main__description--summary"
-        this.descriptionSummary.innerText = "samenvatting";
+
+        this.descriptionAudio = document.createElement("audio");
+        this.descriptionAudio.classList = "main__description--audio";
+        this.descriptionAudio.setAttribute("controls", true);
+
+        this.descriptionLink = document.createElement("a");
+
+
+        this.descriptionBigWrapper = document.createElement("div");
+        this.descriptionBigWrapper.classList = "main__description--bigWrapper";
+
+        this.descriptionSummaryWrapper = document.createElement("article");
+        this.descriptionSummaryWrapper.classList = "main__description--p";
 
         this.descriptionWrapper = document.createElement("div");
         this.descriptionWrapper.classList = "main__description--wrapper";
 
-        this.descriptionAudio = document.createElement("audio");
-        this.descriptionAudio.classList = "main__description--audio";
-        this.descriptionAudio.src = "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/e84d187e-db4d-4449-89ad-89c6871001f4/SoH_S07E18_Laura_Inserra_SEG_1_mix_4.mp3";
-
-        this.descriptionLink = document.createElement("a");
-        this.descriptionLink.href = "https://greatergood.berkeley.edu/podcasts/item/how_music_evokes_awe";
-
         this.descriptionSource = document.createElement("button");
         this.descriptionSource.classList = "main__description--button";
-        this.descriptionSource.innerText = "source";
+        this.descriptionSource.innerText = "Bron";
+
+        this.descriptionIMG.src = "img/Gratitude.webp";
+        this.descriptionDate.innerText = "24-11-2022";
+        this.descriptionTitle.innerText = "How to Practice Gratitude When You're Not Feeling Thankful";
+        this.descriptionSummary.innerText =  "We know that gratitude is good for us. But what can we do when we’re struggling to actually feel thankful? Our guest this week is author and podcast producer Stephanie Foo. Foo built a network of close friends around her in California, where she grew up. As a survivor of child abuse and Complex PTSD, her friends in California became her chosen family. And since she’s moved to New York City, she finds herself often pining for the Golden State and the people she loves there. This week, Foo tries a practice in mental subtraction, which gratitude researcher Ernst Bohlmeijer describes as an antidote to taking things for granted. Imagining her life if she didn’t live in New York helps Foo tap into gratitude even in the depths of winter – when she misses California the most. She even discovers her particular skill in getting the benefits of this practice by leaning into one of her PTSD symptoms. Later in the show, Ernst Bohlmeijer breaks down how keeping a gratitude practice can alter the emotions you’re likely to experience in a given day, and maybe even change you as a person.";
+        this.descriptionAudio.src = "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/f8cabe3b-d76e-46a2-8d3c-af1a752d82da/SoH_S07E13_Stephanie_Foo_SEG_1_mix_3.5.mp3";
+        this.descriptionLink.href = "https://greatergood.berkeley.edu/podcasts/item/how_to_practice_gratitude_when_youre_not_feeling_thankful";
 
 
     }
+    makeDescriptionFromData(episode, data) {
+
+        console.log(data)
+
+        this.descriptionIMG.src = episode["img"];
+        this.descriptionDate.innerText = episode["date (dd-mm-yyyy)"];
+        this.descriptionTitle.innerText = episode["title"];
+        this.descriptionSummary.innerText = episode["summary"];
+        this.descriptionAudio.src = episode["audio"];
+        this.descriptionLink.href = episode["url"];
 
 
-
+        this.descriptionFigure.appendChild(this.descriptionIMG);
+        this.descriptionFigure.appendChild(this.descriptionDate);
+        this.descriptionFigure.appendChild(this.descriptionTitle);
+        this.descriptionSummaryWrapper.appendChild(this.descriptionSummary);
+        this.descriptionWrapper.appendChild(this.descriptionAudio);
+        this.descriptionWrapper.appendChild(this.descriptionLink);
+    }
 
     render() {
         this.mainElement.appendChild(this.sectionRight);
         this.sectionRight.appendChild(this.rightDescription);
         this.rightDescription.appendChild(this.descriptionFigure);
+        this.rightDescription.appendChild(this.descriptionBigWrapper);
+        this.descriptionBigWrapper.appendChild(this.descriptionSummaryWrapper);
+        this.descriptionBigWrapper.appendChild(this.descriptionWrapper);
+        this.descriptionLink.appendChild(this.descriptionSource);
         this.descriptionFigure.appendChild(this.descriptionIMG);
         this.descriptionFigure.appendChild(this.descriptionDate);
         this.descriptionFigure.appendChild(this.descriptionTitle);
-        this.rightDescription.appendChild(this.descriptionSummary);
-        this.rightDescription.appendChild(this.descriptionWrapper);
+        this.descriptionSummaryWrapper.appendChild(this.descriptionSummary);
         this.descriptionWrapper.appendChild(this.descriptionAudio);
         this.descriptionWrapper.appendChild(this.descriptionLink);
-        this.descriptionLink.appendChild(this.descriptionSource);
 
     }
 }
@@ -225,7 +257,7 @@ class Footer {
     constructor(placeToRenderFooter) {
         this.placeToRenderFooter = document.getElementsByTagName(placeToRenderFooter)[0];
 
-        this.footerElement = document.createElement("main");
+        this.footerElement = document.createElement("footer");
         this.footerElement.classList = "footer";
 
         this.FooterText = document.createElement("h3");
@@ -258,7 +290,6 @@ class App {
 
         this.GetDataFromApi
             .getData().then((data) => {
-                //this.Main.makeTransactionsFromData(data);
                 this.Main.makeCardsFromData(data);
 
             });

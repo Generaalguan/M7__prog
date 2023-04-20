@@ -1,0 +1,44 @@
+{
+    "games": [
+        {
+            "title": "God Of War Ragnarok",
+            "platform": "PS5"
+        },
+        {
+            "title": "Ghost Runner",
+            "platform": "PS5"
+        },
+        {
+            "title": "Ghost Of Tsushima",
+            "platform": "PS4"
+        },
+        {
+            "title": "God Of War",
+            "platform": "PS4"
+        },
+        {
+            "title": "God Of War III",
+            "platform": "PS3"
+        },
+        {
+            "title": "The Last Of Us",
+            "platform": "PS3"
+        },
+        {
+            "title": "God Of War",
+            "platform": "PS2"
+        },
+        {
+            "title": "God Of War II",
+            "platform": "PS2"
+        },
+        {
+            "title": "New Super Mario WII",
+            "platform": "WII"
+        },
+        {
+            "title": "Super Mario Kart WII",
+            "platform": "WII"
+        }
+    ]
+}

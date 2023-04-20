@@ -1,0 +1,67 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::after {
+  content: "";
+  background: radial-gradient(1rem 1rem, rgba(236, 236, 236, 0.2) 90%, black);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 5vw 5vw;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+@media screen and (max-width: 50rem) {
+  body::after {
+    background-size: 20vw 20vw;
+  }
+}
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translate(-5rem, 5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.card {
+  width: 40rem;
+  aspect-ratio: 1/1;
+  background: linear-gradient(45deg, #3282B8 30%, #D6CDA4 65%, #3D8361 100%);
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  animation-name: popup;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card__heading {
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=style.css.map */

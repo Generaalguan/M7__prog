@@ -1,0 +1,48 @@
+@media screen and (max-width: 62.5rem) {
+
+    body {
+        height: 100%;
+    }
+
+    .header {
+        height: 20%;
+        font-size: 50%;
+        padding: 2rem;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+
+        &__section {
+            height: 100%;
+
+            &--left{
+                justify-content: start;
+            }
+        }
+
+        &__cards {
+        }
+
+        &__description {
+            &--wrapper {
+                flex-direction: column;
+                gap: 2rem;
+                justify-content: center;
+                align-items: start;
+                padding: 0;
+            }
+
+            &--bigWrapper{
+                gap: 2rem;
+            }
+        }
+    }
+
+    .footer{
+        padding: 2rem;
+        font-size: 95%;
+    }
+}

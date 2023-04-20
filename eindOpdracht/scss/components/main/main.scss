@@ -1,22 +1,23 @@
 .main {
 
     width: 100%;
-    height: 70%;
+    height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     &__section {
         height: 70vh;
         background: white;
+        display: flex;
+        justify-content: center;
 
         &--left {
-            display: flex;
-            justify-content: center;
-            align-items: end;
+
+            align-items: start;
         }
 
-        // &--right{
-
+        // &--right {
+        //     
         // }
     }
 
@@ -30,7 +31,6 @@
         padding: 0.5rem;
         gap: 2rem;
         width: 50rem;
-        height: 100%;
         overflow: hidden;
 
 
@@ -54,19 +54,90 @@
         &--img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         &--datum {
             position: absolute;
             top: 5%;
             right: 5%;
+            color: white;
         }
 
         &--titel {
             position: absolute;
             bottom: 0;
             left: 0;
+            color: white;
         }
+    }
+
+    &__description {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 70vh;
+        
+
+
+        &--figure {
+            position: relative;
+            width: 100%;
+            height: 40%;
+
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &--date {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+        }
+
+        &--title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: white;
+        }
+
+        &--bigWrapper{
+            height: 55%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &--p{
+            overflow-y: scroll;
+        }
+
+
+        &--wrapper{
+            padding: 0 2rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        &--button{
+            background: none;
+            border: none;
+            font-size: 150%;
+            cursor: pointer;
+
+        }
+
+
     }
 
 }

@@ -1,0 +1,17 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/animations";
+
+.card{
+    width: 40rem;
+    aspect-ratio: 1/1;
+    background: linear-gradient(45deg, #3282B8 30%, #D6CDA4 65%, #3D8361 100%);
+    backdrop-filter: blur(0.5rem);
+    @include mixins.flexcenter;
+    border-radius: 0.5rem;
+    @include animations.a-popup;
+
+    &__heading{
+        font-size: 150%;
+        text-transform: uppercase;
+    }
+}
