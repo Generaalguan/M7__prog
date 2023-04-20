@@ -158,13 +158,62 @@ class Mainrightsection {
 
         this.sectionRight = document.createElement("section");
         this.sectionRight.classList = "main__section main__section--right";
+        
+        this.rightDescription = document.createElement("div");
+        this.rightDescription.classList = "main__description";
+
+        this.descriptionFigure = document.createElement("figure");
+        this.descriptionFigure.classList = "main__description--figure";
+
+        this.descriptionIMG = document.createElement("img");
+        this.descriptionIMG.src = "img/why.webp";
+        this.descriptionIMG.classList = "main__description--img";
+
+        this.descriptionDate = document.createElement("h3");
+        this.descriptionDate.classList = "main__description--date";
+        this.descriptionDate.innerText = "datum";
+
+        this.descriptionTitle = document.createElement("h3");
+        this.descriptionTitle.classList = "main__description--title"
+        this.descriptionTitle.innerText = "titel";
+
+        this.descriptionSummary = document.createElement("p");
+        this.descriptionSummary.classList = "main__description--summary"
+        this.descriptionSummary.innerText = "samenvatting";
+
+        this.descriptionWrapper = document.createElement("div");
+        this.descriptionWrapper.classList = "main__description--wrapper";
+
+        this.descriptionAudio = document.createElement("audio");
+        this.descriptionAudio.classList = "main__description--audio";
+        this.descriptionAudio.src = "https://dts.podtrac.com/redirect.mp3/dovetail.prxu.org/_/192/e84d187e-db4d-4449-89ad-89c6871001f4/SoH_S07E18_Laura_Inserra_SEG_1_mix_4.mp3";
+
+        this.descriptionLink = document.createElement("a");
+        this.descriptionLink.href = "https://greatergood.berkeley.edu/podcasts/item/how_music_evokes_awe";
+
+        this.descriptionSource = document.createElement("button");
+        this.descriptionSource.classList = "main__description--button";
+        this.descriptionSource.innerText = "source";
+
+
     }
 
 
 
 
     render() {
-        this.mainElement.appendChild(this.sectionRight)
+        this.mainElement.appendChild(this.sectionRight);
+        this.sectionRight.appendChild(this.rightDescription);
+        this.rightDescription.appendChild(this.descriptionFigure);
+        this.descriptionFigure.appendChild(this.descriptionIMG);
+        this.descriptionFigure.appendChild(this.descriptionDate);
+        this.descriptionFigure.appendChild(this.descriptionTitle);
+        this.rightDescription.appendChild(this.descriptionSummary);
+        this.rightDescription.appendChild(this.descriptionWrapper);
+        this.descriptionWrapper.appendChild(this.descriptionAudio);
+        this.descriptionWrapper.appendChild(this.descriptionLink);
+        this.descriptionLink.appendChild(this.descriptionSource);
+
     }
 }
 
